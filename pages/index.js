@@ -8,10 +8,10 @@ export default function Home() {
     <div className="App">
       <Canvas>
         <ambientLight />
-        <pointLight position={[10, 10, 10]} />
+        <pointLight position={[5, 5, 5]} />
         <OrbitControls />
         <Suspense fallback={null} >
-          <Shoe position={[0, 0, 0]}  />
+          <Shoe/>
         </Suspense>
       </Canvas>
     </div>
