@@ -5,7 +5,7 @@ import Shoe from "../components/atoms/assets/shoe";
 
 export default function Home() {
   return (
-    <div className="App">
+    <div className="h-screen w-screen bg-blue-100">
       <Canvas>
         <ambientLight />
         <pointLight position={[5, 5, 5]} />
