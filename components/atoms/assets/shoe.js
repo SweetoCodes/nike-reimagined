@@ -15,11 +15,11 @@ import * as THREE from "three";
 const p = (a) => {
   // const res = [...Array(10)].map((_, i) => i * 10);
   if (a < 0.25) {
-    return [Math.PI / 2,0,0];
+    return [Math.PI / 2, 0, 0];
   } else if (a < 0.5) {
-    return [Math.PI/4,Math.PI / 2,0];
+    return [Math.PI / 4, Math.PI / 2, 0];
   } else {
-    return [-Math.PI / 4,0,Math.PI / 2];
+    return [-Math.PI / 4, 0, Math.PI / 2];
   }
 };
 
@@ -32,9 +32,24 @@ export const Shoe = ({ scale, rotation, position, targetRotation }) => {
   useFrame(() => {
     const a = scroll.range(0, 1);
     const x = p(a);
-    ref.current.rotation.x = THREE.MathUtils.damp(ref.current.rotation.x, x[0], 4, d);
-    ref.current.rotation.y = THREE.MathUtils.damp(ref.current.rotation.y, x[1], 4, d);
-    ref.current.rotation.z = THREE.MathUtils.damp(ref.current.rotation.z, x[2], 4, d);
+    ref.current.rotation.x = THREE.MathUtils.damp(
+      ref.current.rotation.x,
+      x[0],
+      4,
+      d
+    );
+    ref.current.rotation.y = THREE.MathUtils.damp(
+      ref.current.rotation.y,
+      x[1],
+      4,
+      d
+    );
+    ref.current.rotation.z = THREE.MathUtils.damp(
+      ref.current.rotation.z,
+      x[2],
+      4,
+      d
+    );
   });
 
   return (
@@ -45,32 +60,31 @@ export const Shoe = ({ scale, rotation, position, targetRotation }) => {
       ref={ref}
       dispose={null}
     >
-      <group rotation={[-Math.PI / 2, 0, 0]}>
-        <group scale={1}>
-          <group rotation={[Math.PI / 2, 0, 0]}>
-            <mesh
-              geometry={nodes.Base1_Base2_0.geometry}
-              material={materials.Base2}
-            />
-            <mesh
-              geometry={nodes.Base1_Logo_0.geometry}
-              material={materials.Logo}
-            />
-            <mesh
-              geometry={nodes.Base1_lambert1_0.geometry}
-              material={materials.lambert1}
-            />
-            <mesh
-              geometry={nodes.Base1_Cordones_0.geometry}
-              material={materials.Cordones}
-            />
-            <mesh
-              geometry={nodes.Base1_Suela_0.geometry}
-              material={materials.Suela}
-            />
-          </group>
-        </group>
-      </group>
+      <mesh
+        castShadow
+        geometry={nodes.Base1_Base2_0.geometry}
+        material={materials.Base2}
+      />
+      <mesh
+        castShadow
+        geometry={nodes.Base1_Logo_0.geometry}
+        material={materials.Logo}
+      />
+      <mesh
+        castShadow
+        geometry={nodes.Base1_lambert1_0.geometry}
+        material={materials.lambert1}
+      />
+      <mesh
+        castShadow
+        geometry={nodes.Base1_Cordones_0.geometry}
+        material={materials.Cordones}
+      />
+      <mesh
+        castShadow
+        geometry={nodes.Base1_Suela_0.geometry}
+        material={materials.Suela}
+      />
     </group>
   );
 };
