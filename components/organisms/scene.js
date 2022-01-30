@@ -2,6 +2,7 @@ import { Suspense, useRef } from "react";
 import { useThree, useFrame } from "@react-three/fiber";
 import { OrbitControls, useScroll, Scroll } from "@react-three/drei";
 import { Shoe } from "../atoms/assets/shoe";
+import { Fallback } from "../molecules/html/fallback";
 
 export default function Scene() {
   const { width, height } = useThree((state) => state.viewport);
@@ -9,7 +10,7 @@ export default function Scene() {
 
   return (
     <>
-      <Suspense fallback={null}>
+      <Suspense fallback={<Fallback />}>
         <ambientLight />
         <pointLight castShadow position={[5, 5, 5]} />
         {/* <OrbitControls /> */}
