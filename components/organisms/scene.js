@@ -1,17 +1,24 @@
-import { OrbitControls } from "@react-three/drei";
-import { useThree } from "@react-three/fiber";
-import { Suspense } from "react";
-import Shoe from "../atoms/assets/shoe";
+import { Suspense, useRef } from "react";
+import { useThree, useFrame } from "@react-three/fiber";
+import { OrbitControls, useScroll, Scroll } from "@react-three/drei";
+import { Shoe } from "../atoms/assets/shoe";
 
 export default function Scene() {
   const { width, height } = useThree((state) => state.viewport);
+  const scroll = useScroll();
+
   return (
     <>
-      <ambientLight />
-      <pointLight position={[5, 5, 5]} />
-      <OrbitControls />
       <Suspense fallback={null}>
-        <Shoe scale={width / 30} />
+        <ambientLight />
+        <pointLight castShadow position={[5, 5, 5]} />
+        {/* <OrbitControls /> */}
+        <Shoe
+          scale={width / 20}
+          rotation={[0, 0, 0]}
+          position={[0, 0, 0]}
+          targetRotation={[-Math.PI / 2, 0, 0]}
+        />
       </Suspense>
     </>
   );
