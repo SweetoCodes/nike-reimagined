@@ -1,14 +1,21 @@
-import { Html } from "@react-three/drei";
-import Link from "next/link";
+import { Html, useScroll } from "@react-three/drei";
+import { useState } from "react"
+import { sections } from "../data/sections";
+import { useFrame } from "@react-three/fiber";
+export const Overlay = () => {
+  const [component, setComponent] = useState(null)
+  const scroll = useScroll();
+  
+  useFrame(() => {
+    const x = sections[Math.floor(scroll.range(0, 1) * (sections.length))]
+    setComponent(x.component)
+  });
 
-export const Overlay = ({}) => {
   return (
     <Html fullscreen style={{ "pointer-events": "none" }}>
       <div className="flex flex-col overflow-hidden max-w-[320px] mx-auto justify-between w-full h-screen text-center ">
         <div>
-          <h1 className="">Nike</h1>
-          <h2 className="">Air Max 90</h2>
-          <p className="">Premium</p>
+        {component}
         </div>
         <div>
         <a href="https://www.charliesweeting.com/">

@@ -1,9 +1,9 @@
 import { Suspense } from "react";
 import { useThree } from "@react-three/fiber";
 import { ContactShadows } from "@react-three/drei";
-import { Shoe } from "../atoms/assets/shoe";
-import { Fallback } from "../molecules/html/fallback";
-import { Overlay } from "../molecules/html/overlay";
+import { Shoe } from "./shoe";
+import { Fallback } from "./fallback";
+import { Overlay } from ".//overlay";
 
 export default function Scene() {
   const { width, height } = useThree((state) => state.viewport);

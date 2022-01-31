@@ -9,9 +9,9 @@ title: Nike Air Max 90 Premium
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import {  useScroll} from "@react-three/drei";
+import { useScroll} from "@react-three/drei";
 import * as THREE from "three";
-import { sections } from "../../../data/sections";
+import { sections } from "../data/sections";
 
 export const Shoe = ({ scale, rotation, position }) => {
   const { nodes, materials } = useGLTF("/assets/scene.gltf");
@@ -20,7 +20,7 @@ export const Shoe = ({ scale, rotation, position }) => {
   const d = 0.01;
 
   useFrame(() => {
-    const x = sections[Math.floor(scroll.range(0, 1) * sections.length)]
+    const x = sections[Math.floor(scroll.range(0, 1) * (sections.length))]
     const modelRotation = x.modelRotation
     const modelPosition = x.modelPosition
 

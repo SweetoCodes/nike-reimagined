@@ -4,6 +4,8 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    
+    
     extend: {},
     fontFamily: {
       oswald: [ "Oswald", "sans-serif" ],
