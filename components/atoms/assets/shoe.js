@@ -24,11 +24,19 @@ export const Shoe = ({ scale, rotation, position }) => {
     const modelRotation = x.modelRotation
     const modelPosition = x.modelPosition
 
+    if(ref.current.rotation!=modelRotation ){
+
     ref.current.rotation.set(
       THREE.MathUtils.damp(ref.current.rotation.x, modelRotation[0], 4, d),
       THREE.MathUtils.damp(ref.current.rotation.y, modelRotation[1], 4, d),
       THREE.MathUtils.damp(ref.current.rotation.z, modelRotation[2], 4, d)
-    );
+    );}
+    if(ref.current.position!=modelPosition ){
+    ref.current.position.set(
+    THREE.MathUtils.damp(ref.current.position.x, modelPosition[0], 4, d),
+    THREE.MathUtils.damp(ref.current.position.y, modelPosition[1], 4, d),
+    THREE.MathUtils.damp(ref.current.position.z, modelPosition[2], 4, d))
+  }
   });
 
   return (
