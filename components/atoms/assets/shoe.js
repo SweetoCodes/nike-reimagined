@@ -9,46 +9,25 @@ title: Nike Air Max 90 Premium
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { OrbitControls, useScroll, Scroll } from "@react-three/drei";
+import {  useScroll} from "@react-three/drei";
 import * as THREE from "three";
+import { sections } from "../../../data/sections";
 
-const p = (a) => {
-  // const res = [...Array(10)].map((_, i) => i * 10);
-  if (a < 0.25) {
-    return [Math.PI / 2, 0, 0];
-  } else if (a < 0.5) {
-    return [Math.PI / 4, Math.PI / 2, 0];
-  } else {
-    return [-Math.PI / 4, 0, Math.PI / 2];
-  }
-};
-
-export const Shoe = ({ scale, rotation, position, targetRotation }) => {
+export const Shoe = ({ scale, rotation, position }) => {
   const { nodes, materials } = useGLTF("/assets/scene.gltf");
   const scroll = useScroll();
   const ref = useRef();
   const d = 0.01;
 
   useFrame(() => {
-    const a = scroll.range(0, 1);
-    const x = p(a);
-    ref.current.rotation.x = THREE.MathUtils.damp(
-      ref.current.rotation.x,
-      x[0],
-      4,
-      d
-    );
-    ref.current.rotation.y = THREE.MathUtils.damp(
-      ref.current.rotation.y,
-      x[1],
-      4,
-      d
-    );
-    ref.current.rotation.z = THREE.MathUtils.damp(
-      ref.current.rotation.z,
-      x[2],
-      4,
-      d
+    const x = sections[Math.floor(scroll.range(0, 1) * sections.length)]
+    const modelRotation = x.modelRotation
+    const modelPosition = x.modelPosition
+
+    ref.current.rotation.set(
+      THREE.MathUtils.damp(ref.current.rotation.x, modelRotation[0], 4, d),
+      THREE.MathUtils.damp(ref.current.rotation.y, modelRotation[1], 4, d),
+      THREE.MathUtils.damp(ref.current.rotation.z, modelRotation[2], 4, d)
     );
   });
 
@@ -87,6 +66,6 @@ export const Shoe = ({ scale, rotation, position, targetRotation }) => {
       />
     </group>
   );
-};
+}
 
 useGLTF.preload("/assets/scene.gltf");
