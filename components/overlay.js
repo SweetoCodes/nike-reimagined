@@ -14,7 +14,7 @@ export const Overlay = () => {
   return (
     <Html fullscreen style={{ "pointer-events": "none" }}>
       <div className="flex flex-col overflow-hidden max-w-[320px] mx-auto justify-between w-full h-screen text-center ">
-        <div>
+        <div className="pt-4">
         {component}
         </div>
         <div>
