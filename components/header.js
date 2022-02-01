@@ -99,8 +99,10 @@ export const BuiltBy = () => {
         </a>
       </h2>
       <div className="space-x-6 flex flex-row mx-auto">
-        <GithubIcon style="h-10 w-10" /> <Youtube style="h-10 w-10" />{" "}
-        <TwitterIcon style="h-10 w-10" /> <TiktokIcon style="h-10 w-10" />{" "}
+        <GithubIcon style="h-10 w-10" /> 
+        <TwitterIcon style="h-10 w-10" />
+        <Youtube style="h-10 w-10" />
+        <TiktokIcon style="h-10 w-10" />
       </div>
     </div>
   );

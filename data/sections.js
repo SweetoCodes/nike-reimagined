@@ -2,7 +2,7 @@ import { ScrollInstruction, TitleAndPrice, Heel, Ankle, Midsole, SelectSize, Bui
 
 export const sections = [
   {
-    modelPosition: [0, -0.5, 8],
+    modelPosition: [0, -0.2, 6],
     modelRotation: [Math.PI / 3, 0, 0],
     component: <ScrollInstruction/>
   },
@@ -13,17 +13,17 @@ export const sections = [
   },
   {
     modelPosition: [0, -0.5, 6],
-    modelRotation: [Math.PI/4, -Math.PI, 0],
+    modelRotation: [Math.PI/4, Math.PI, 0],
     component: <Heel/>
   },
   {
-    modelPosition: [-1, 1, -1],
-    modelRotation: [Math.PI, 0, 0],
+    modelPosition: [-0.2, -1.5, 0],
+    modelRotation: [0, 7 *Math.PI/5, 0],
     component: <Ankle/>
   },
   {
-    modelPosition: [-1, 1, -1],
-    modelRotation: [Math.PI, 0, 0],
+    modelPosition: [-0.2, -1.5, 0],
+    modelRotation: [-Math.PI/6, 7 *Math.PI/5, 0],
     component: <Midsole/>
   },
   {
@@ -32,13 +32,13 @@ export const sections = [
     component: <TitleAndPrice/>
   },
   {
-    modelPosition: [-1, 1, -1],
-    modelRotation: [Math.PI, 0, 0],
+    modelPosition: [0, -0.7, 3],
+    modelRotation: [Math.PI / 3, -Math.PI/2, 0],
     component: <SelectSize/>
   },
   {
-    modelPosition: [-1, 1, -1],
-    modelRotation: [Math.PI, 0, 0],
+    modelPosition: [0, -0.2, 2],
+    modelRotation: [Math.PI / 3, 0, 0],
     component: <BuiltBy/>
   },
 ];
