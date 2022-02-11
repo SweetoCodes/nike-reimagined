@@ -36,9 +36,14 @@ export const sections = [
     modelRotation: [Math.PI / 3, -Math.PI/2, 0],
     component: <SelectSize/>
   },
+  // {
+  //   modelPosition: [0, -0.2, 2],
+  //   modelRotation: [Math.PI / 3, 0, 0],
+  //   component: <BuiltBy/>
+  // },
   {
-    modelPosition: [0, -0.2, 2],
+    modelPosition: [0, -0.2, 6],
     modelRotation: [Math.PI / 3, 0, 0],
-    component: <BuiltBy/>
+    component: <ScrollInstruction/>
   },
 ];
