@@ -6,7 +6,7 @@ import { sections } from "../data/sections";
 export default function Home() {
   softShadows();
   return (
-      <div className="h-screen w-screen relative mx-auto bg-gray-200 ">
+      <div className="h-screen w-screen relative mx-auto bg-white ">
         <Canvas
           shadows
           colorManagement
