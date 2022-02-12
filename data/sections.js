@@ -7,7 +7,7 @@ export const sections = [
     component: <ScrollInstruction/>
   },
   {
-    modelPosition: [-0.2, -1.5, 0],
+    modelPosition: [-0.2, -1.5, -1],
     modelRotation: [0, Math.PI / 2, 0],
     component: <Quote/>
   },
@@ -17,12 +17,12 @@ export const sections = [
     component: <Heel/>
   },
   {
-    modelPosition: [-0.2, -1.5, 0],
+    modelPosition: [0.2, -1.5, 0],
     modelRotation: [0, 7 *Math.PI/5, 0],
     component: <Ankle/>
   },
   {
-    modelPosition: [-0.2, -1.5, 0],
+    modelPosition: [0.2, -1.5, 0],
     modelRotation: [-Math.PI/6, 7 *Math.PI/5, 0],
     component: <Midsole/>
   },
@@ -32,7 +32,7 @@ export const sections = [
     component: <TitleAndPrice/>
   },
   {
-    modelPosition: [0, -0.7, 3],
+    modelPosition: [0.2, -0.7, 0],
     modelRotation: [Math.PI / 3, -Math.PI/2, 0],
     component: <SelectSize/>
   },
@@ -41,4 +41,5 @@ export const sections = [
     modelRotation: [Math.PI / 3, 0, 0],
     component: <BuiltBy/>
   },
+
 ];
